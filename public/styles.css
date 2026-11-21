@@ -68,6 +68,7 @@ h1 span { color: #8998ff; }
 .asset-info a, .asset-info .muted { font-size: .875rem; }
 .asset-info a { color: var(--link); text-underline-offset: 3px; }
 .formats { display: flex; flex-wrap: wrap; gap: 11px; }
+.wordmark-info { display: grid; justify-content: stretch; }
 .swatches { display: grid; }
 .swatch { border: 0; display: flex; align-items: center; justify-content: space-between; gap: 5px; padding: 0 17px; text-align: left; }
 .swatch:focus-visible { outline-offset: -5px; }
