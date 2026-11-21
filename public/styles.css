@@ -61,6 +61,7 @@ h1 span { color: #8998ff; }
 .subsection { margin-top: 32px; margin-bottom: 14px; }
 .subsection h3 { font-size: 1.25rem; letter-spacing: -.035em; }
 .asset-grid, .shot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.asset-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .asset, .shot, .copy-card, .contract-list, .resource { border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
 .asset, .shot { overflow: hidden; }
 .asset-preview, .swatches { height: 194px; }
@@ -106,6 +107,9 @@ h1 span { color: #8998ff; }
 .footer p { margin-top: 8px; color: var(--muted); font-size: .875rem; }
 .status:not(:empty) { position: fixed; z-index: 5; inset: auto 18px 18px auto; max-width: calc(100vw - 36px); padding: 12px 16px; border: 1px solid var(--link); border-radius: 8px; background: var(--surface); }
 
+@media (max-width: 1000px) {
+  .asset-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 850px) {
   .shell { width: calc(100% - 40px); }
   .hero { min-height: 450px; }
