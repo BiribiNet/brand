@@ -1,0 +1,47 @@
+{
+  "network": "Arbitrum One",
+  "chainId": 42161,
+  "source": "https://biribi.net/.well-known/dapp-manifest.json",
+  "contracts": [
+    {
+      "name": "Roulette engine",
+      "address": "0xfc6474d1594952ef5beb779b97ba69198b4e7625",
+      "explorer": "https://arbiscan.io/address/0xfc6474d1594952ef5beb779b97ba69198b4e7625"
+    },
+    {
+      "name": "BRB token",
+      "address": "0x58871cf545f8f0df790443492a80edc414df4504",
+      "explorer": "https://arbiscan.io/address/0x58871cf545f8f0df790443492a80edc414df4504"
+    },
+    {
+      "name": "BRB vault",
+      "address": "0x5F9332b04b2590850c7681850cA445dDF7f64aa9",
+      "explorer": "https://arbiscan.io/address/0x5F9332b04b2590850c7681850cA445dDF7f64aa9"
+    },
+    {
+      "name": "USDC vault",
+      "address": "0x46206B1C1fc631Fd6Fcf2Aa2503f9cb022dA96bA",
+      "explorer": "https://arbiscan.io/address/0x46206B1C1fc631Fd6Fcf2Aa2503f9cb022dA96bA"
+    },
+    {
+      "name": "DAI vault",
+      "address": "0x137dD55e422b1881Ad1566ce21E2E4F393bB37B2",
+      "explorer": "https://arbiscan.io/address/0x137dD55e422b1881Ad1566ce21E2E4F393bB37B2"
+    },
+    {
+      "name": "Market registry",
+      "address": "0x2afd5402faeb550045aea5884bcf33409a91679a",
+      "explorer": "https://arbiscan.io/address/0x2afd5402faeb550045aea5884bcf33409a91679a"
+    },
+    {
+      "name": "Side bets",
+      "address": "0x96e34298425c310422bfba424bd4ed455b597d7f",
+      "explorer": "https://arbiscan.io/address/0x96e34298425c310422bfba424bd4ed455b597d7f"
+    },
+    {
+      "name": "Jackpot treasury",
+      "address": "0x2a7c5023581f2a5c75d699cf3a7f0c37d7919eae",
+      "explorer": "https://arbiscan.io/address/0x2a7c5023581f2a5c75d699cf3a7f0c37d7919eae"
+    }
+  ]
+}
