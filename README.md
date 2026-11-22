@@ -17,7 +17,23 @@ From this directory, run `python3 -m http.server 4173 --bind 127.0.0.1 --directo
 
 1. Publish this repository as `BiribiNet/brand` and select **GitHub Actions** under **Settings → Pages → Source**. Push to `main` or run **Publish brand site** to deploy the static files.
 2. In the BiribiNet account's **Settings → Pages**, verify `brand.biribi.net` using the TXT name and value GitHub displays. Add the TXT record in the authoritative Microsoft-hosted `biribi.net` DNS zone.
-3. In the repository's **Settings → Pages**, save `brand.biribi.net` as the custom domain. Then add a CNAME named `brand` pointing to `biribinet.github.io` in the same DNS zone.
-4. Enable **Enforce HTTPS** once available, then check `dig +short CNAME brand.biribi.net` and verify the site and media-kit download over HTTPS.
+3. In the repository's **Settings → Pages**, save `brand.biribi.net` under **Custom domain**. The Microsoft-hosted DNS zone needs a CNAME named `brand` pointing to `biribinet.github.io`.
+4. Wait for the DNS check and certificate provisioning to finish, then enable **Enforce HTTPS**. Verify the homepage and media kit both return HTTP 200 over HTTPS.
 
-See [GitHub’s custom domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
+### Troubleshooting HTTPS
+
+If the browser reports a certificate name mismatch or shows a certificate for `*.github.io`, check both the DNS record and the repository's Pages configuration:
+
+```sh
+dig +short CNAME brand.biribi.net
+gh api repos/BiribiNet/brand/pages --jq '{cname, https_enforced, https_certificate}'
+```
+
+The expected CNAME target is `biribinet.github.io.`. If the Pages API reports `"cname": null`, a repository admin needs to save `brand.biribi.net` under **Custom domain**. GitHub provisions a certificate for the hostname after its DNS check passes. [GitHub’s HTTPS provisioning guide](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https)
+
+```sh
+curl -fsSI https://brand.biribi.net/
+curl -fsSI https://brand.biribi.net/assets/biribi-media-kit.zip
+```
+
+If TLS succeeds but the homepage returns HTTP 404, try `https://brand.biribi.net/index.html`. If that works and the `/` response shows a cache hit, recheck `/` after the cached response clears.
